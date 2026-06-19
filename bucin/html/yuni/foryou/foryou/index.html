@@ -888,30 +888,6 @@
         return hearts[index % hearts.length];
       }
 
-
-          for (let i = 20, idx = 0; i <= 100; i += 10, idx++) {
-            const cycleIndex = idx % 10;
-            const step = 4;
-            const marginLeft = cycleIndex < 5 ? (4 - cycleIndex) * step : (cycleIndex - 5) * step;
-
-            if (i === 100) {
-              instance
-                .type(
-                  `<span class='line' style='display:block;margin-left:0;margin-right:0;text-align:center;font-weight:bold;font-size:17px;'>I Love U ${i}% ${getHeart(i - 1)}</span>`
-                )
-                .pause(1);
-            } else {
-              instance
-                .options({ speed: 1 })
-                .type(`<span class='line' style='margin-left:${marginLeft}px;'>I Love U ${i}% ${getHeart(i - 1)}</span>`)
-                .pause(2);
-            }
-          }
-
-          instance.go();
-        }, 100);
-      }
-
       const vteksFinal = teksFinal.innerHTML;
       teksFinal.innerHTML = '';
 
