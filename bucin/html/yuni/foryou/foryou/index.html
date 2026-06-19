@@ -347,9 +347,21 @@
         z-index: 1;
       }
 
-      /* Container untuk teks love (tidak dipakai lagi, disembunyikan) */
       .containerAkhir {
-        display: none;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        overflow: auto;
+        height: 92px;
+        justify-content: center;
+        text-align: left;
+        margin-top: -14px;
+        margin-bottom: 16px;
+      }
+
+      #teksAkhir {
+        margin: 0;
+        margin-top: -20px;
       }
 
       #teks2 {
@@ -363,48 +375,190 @@
         display: block;
       }
 
-      /* FINAL MESSAGE - diperbaiki lebih luas & rapi */
-      .containerFinal {
-        padding: 20px 25px;
-        width: 90%;
-        max-width: 500px;
-        margin: 20px auto 0 auto;
-        max-height: 55vh;
-        overflow-y: auto;
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(8px);
+     /* Ganti class .containerFinal dan #teksFinal yang lama dengan ini */
+.containerFinal {
+  padding: 20px 25px;
+  display: flex;
+  width: 90%;
+  max-width: 600px; /* Membatasi kelebaran di PC/Tablet */
+  overflow-y: auto;
+  height: 60vh; /* Memberikan ruang ekstra ke bawah */
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.45); /* [UX Fix] Memastikan teks bisa dibaca */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  margin: 0 auto;
+}
+
+#teksFinal {
+  text-align: left;
+  margin: 0;
+  padding-bottom: 20px; /* Ruang bernapas di akhir teks */
+}
+
+      #scontainer {
+        width: 80%;
+        margin: 20px auto;
+        min-height: 650px;
+        margin-top: 150px;
+        color: #000;
+      }
+
+      @media screen and (max-width: 400px) {
+        #container {
+          width: 100%;
+          margin: 50% auto;
+          min-height: 800px;
+        }
+      }
+
+      .wrapper {
+        position: fixed;
+      }
+
+      .box div {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        border: 6px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .box div:nth-child(1) {
+        top: 12%;
+        left: 42%;
+        animation: animate 10s linear infinite;
+      }
+
+      .box div:nth-child(2) {
+        top: 70%;
+        left: 50%;
+        animation: animate 7s linear infinite;
+      }
+
+      .box div:nth-child(3) {
+        top: 17%;
+        left: 6%;
+        animation: animate 9s linear infinite;
+      }
+
+      .box div:nth-child(4) {
+        top: 20%;
+        left: 60%;
+        animation: animate 10s linear infinite;
+      }
+
+      .box div:nth-child(5) {
+        top: 67%;
+        left: 10%;
+        animation: animate 6s linear infinite;
+      }
+
+      .box div:nth-child(6) {
+        top: 80%;
+        left: 70%;
+        animation: animate 12s linear infinite;
+      }
+
+      .box div:nth-child(7) {
+        top: 60%;
+        left: 80%;
+        animation: animate 15s linear infinite;
+      }
+
+      .box div:nth-child(8) {
+        top: 32%;
+        left: 25%;
+        animation: animate 16s linear infinite;
+      }
+
+      .box div:nth-child(9) {
+        top: 90%;
+        left: 25%;
+        animation: animate 9s linear infinite;
+      }
+
+      .box div:nth-child(10) {
+        top: 20%;
+        left: 80%;
+        animation: animate 5s linear infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: scale(0) translateY(0) rotate(0);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(1.3) translateY(-90px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .swal2-modal > * {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 16px;
+        color: white;
+      }
+
+      .swal2-title {
+        line-height: 1.3em;
+        font-size: 16px;
+        text-align: center;
+        padding: 15px 25px 0 25px;
+      }
+
+      .swal2-timer-progress-bar-container > * {
+        height: 2.5px;
+        opacity: 0.9;
+        background: pink;
+        margin: 0 18px;
+      }
+
+      .swal2-modal {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        box-shadow: none;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        max-width: 330px;
+        top: -60px;
+      }
+
+      .swal2-image {
+        box-shadow: 0 4px 30px rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.3);
+        border: 2.5px solid rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        padding: 10px;
+      }
+
+      .swal2-styled.swal2-confirm,
+      .swal2-styled.swal2-cancel {
+        position: relative;
+        background-color: #4839eb;
+        color: #fff;
         border-radius: 18px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-        border: 1px solid rgba(255,255,255,0.15);
-        text-align: left;
-        scroll-behavior: smooth;
+        z-index: 1;
+        transition: all 0.2s;
       }
 
-      #teksFinal {
-        font-family: 'Noto Sans', 'Quicksand', sans-serif;
-        font-size: 15px;
-        line-height: 1.7em;
-        color: #f0f0f0;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-        margin: 0;
-        white-space: pre-wrap;
-        word-break: break-word;
+      .kumpulanstiker > img {
+        display: none;
       }
 
-      /* Stiker akhir */
-      #stiker2 {
-        margin-top: 30px;
-      }
-
-      /* Hati jatuh - lebih kecil dan halus */
       .hati {
         position: fixed;
-        width: 22px;
-        height: 22px;
+        width: 26px;
+        height: 26px;
         opacity: 0.7;
-        animation: ngelayang 4.5s ease-in-out forwards;
+        animation: ngelayang 5s ease-in-out forwards;
         z-index: 0;
-        pointer-events: none;
       }
 
       @keyframes ngelayang {
@@ -429,21 +583,13 @@
         height: 100%;
         fill: #ff1744;
         stroke: none;
-        filter: drop-shadow(0 0 6px #ff4081);
-      }
-
-      /* Elemen dekoratif lingkaran tetap ada, tapi kita kecilkan supaya tidak terlalu mengganggu */
-      .box div {
-        width: 40px;
-        height: 40px;
-        border-width: 4px;
+        filter: drop-shadow(0 0 8px #ff4081);
       }
     </style>
   </head>
 
   <body>
-    <!-- Audio tanpa loop agar bisa ganti lagu -->
-    <audio src="../../../../v2/music/bergema.mp3" id="linkmp3" class="sembunyi"></audio>
+    <audio src="../../../../v2/music/bergema.mp3" id="linkmp3" class="sembunyi" loop></audio>
 
     <div class="overlay">
       <div class="loading-message">Hai kamu!<br />Tunggu dulu ya..</div>
@@ -488,20 +634,22 @@
         </div>
 
         <div id="swiperAkhir" class="swiper-slide">
-          <div id="stiker2" class="scale0 stiker" style="margin-top: 80px; margin-bottom: 0px;">
+          <div id="stiker2" class="scale0 stiker" style="margin-top: 100px; margin-bottom: 0px;">
             <img id="stikerAkhir1" src="https://htmlku.com/0/panda/panah.gif" alt="Arrow" />
             <img id="stikerAkhir2" class="sembunyi" src="https://htmlku.com/0/panda/" alt="Hidden sticker 1" />
             <img id="stikerAkhir3" class="sembunyi" src="https://htmlku.com/0/panda/muah.gif" alt="Hidden sticker 2" />
           </div>
           <h1 id="teks2" class="scale0 quicksand" style="font-size: 20px;"></h1>
 
-          <!-- containerAkhir disembunyikan, tidak digunakan -->
-          <div id="contentAkhir" class="containerAkhir sembunyi">
+          <p id="teksLoveU" class="sembunyi">I Love U 1% ❤️</p>
+          <p id="teksRandomEmoji" class="sembunyi">💙💚💛💜</p>
+
+          <div id="contentAkhir" class="containerAkhir">
             <h1 id="teksAkhir" class="quicksand" style="font-size: 18px; font-weight: 400;"></h1>
           </div>
 
-          <div id="contentFinal" class="containerFinal">
-            <h1 id="teksFinal" class="quicksand" style="font-size:17px;font-weight:400;">
+       <div id="contentFinal" class="containerFinal">
+  <h1 id="teksFinal" class="quicksand" style="font-size:17px;font-weight:400;">
 
     Sejujurnya, aku juga ingin ditemani terus, ingin diperhatikan, dan ingin merasa ada seseorang yang benar-benar hadir.
     <br>
@@ -644,8 +792,8 @@
     <br>
     Dan terima kasih juga karena sudah mempercayakan sebagian isi duniamu untuk aku dengarkan. 🤍
 
-            </h1>
-          </div>
+  </h1>
+</div>
         </div>
       </div>
 
@@ -676,6 +824,12 @@
       const body = document.querySelector('body');
       const audio = new Audio(linkmp3.src);
 
+      audio.addEventListener('ended', function () {
+  audio.src = '../../../../v2/music/penjaga.mp3';
+  audio.play();
+  audio.loop = true; // Set true jika lagu kedua mau diputar terus-menerus
+});
+
       const swiper = new Swiper('.mySwiper', {
         pagination: {
           el: '.swiper-pagination',
@@ -687,13 +841,13 @@
             teksSekarang++;
             const teksScale = document.querySelector('#teks' + teksSekarang);
             const stikerScale = document.querySelector('#stiker' + teksSekarang);
+            const Tombol = document.querySelector('#Tombol');
 
             setTimeout(function () {
               teksScale.classList.add('scale1');
               stikerScale.classList.add('scale1');
 
               if (teksSekarang === 2) {
-                // Langsung panggil animasi final tanpa persentase love
                 setTimeout(katanimasi, 200);
               }
             }, 50);
@@ -705,32 +859,76 @@
         },
       });
 
-      // Tampilkan "I Love U 💕" singkat, lalu langsung ke pesan final
+      const initeks = teksLoveU.innerText;
+      teksLoveU.innerHTML = '';
+      teks2.innerHTML = '';
+
       function katanimasi() {
-        new TypeIt('#teks2', {
-          strings: ['I Love U 💕'],
-          speed: 60,
-          cursor: false,
-          afterComplete: function () {
-            document.querySelector('#teks2 .ti-cursor')?.remove();
-            // Langsung mulai mengetik pesan final
-            setTimeout(animteksfinal, 250);
-          },
-        }).go();
+  new TypeIt('#teks2', {
+    strings: ['I Love U 1% 💕'],
+    startDelay: 10,
+    speed: 30,
+    cursor: true,
+    afterComplete: function () {
+      document.querySelector('#teks2 .ti-cursor').style.display = 'none';
+      
+      // Langsung melompat ke pesan final, mem-bypass loop 10%-100%
+      setTimeout(() => {
+        animteksfinal();
+      }, 1000); 
+    },
+  }).go();
+}
+
+// PENTING: Hapus function animateteksnim() dan animteksakhirLoop() di bawah bagian ini.
+      
+      const hearts = ['❤️', '🩷', '💛', '🩵', '💘', '💜', '💕'];
+
+      function getHeart(index) {
+        return hearts[index % hearts.length];
+      }
+
+
+          for (let i = 20, idx = 0; i <= 100; i += 10, idx++) {
+            const cycleIndex = idx % 10;
+            const step = 4;
+            const marginLeft = cycleIndex < 5 ? (4 - cycleIndex) * step : (cycleIndex - 5) * step;
+
+            if (i === 100) {
+              instance
+                .type(
+                  `<span class='line' style='display:block;margin-left:0;margin-right:0;text-align:center;font-weight:bold;font-size:17px;'>I Love U ${i}% ${getHeart(i - 1)}</span>`
+                )
+                .pause(1);
+            } else {
+              instance
+                .options({ speed: 1 })
+                .type(`<span class='line' style='margin-left:${marginLeft}px;'>I Love U ${i}% ${getHeart(i - 1)}</span>`)
+                .pause(2);
+            }
+          }
+
+          instance.go();
+        }, 100);
       }
 
       const vteksFinal = teksFinal.innerHTML;
       teksFinal.innerHTML = '';
 
       function animteksfinal() {
-        // Hapus auto-scroll, biarkan pengguna scroll manual
+        const scrollIntervalDua = setInterval(autoScrollDua, 50);
+
         new TypeIt('#teksFinal', {
           strings: [vteksFinal],
-          speed: 18,
+          startDelay: 10,
+          speed: 23,
           cursor: true,
           afterComplete: function () {
+            setInterval(hatiJatuh, 180);
             document.querySelector('#teksFinal .ti-cursor').style.display = 'none';
-            // Ganti stiker jadi muah
+            setTimeout(() => {
+              clearInterval(scrollIntervalDua);
+            }, 500);
             stiker2.classList.remove('scale1');
             stiker2.classList.add('scale0');
             setTimeout(function () {
@@ -740,10 +938,18 @@
               stiker2.classList.remove('scale0');
               stiker2.classList.add('scale1');
             }, 300);
-            // Mulai hati jatuh perlahan
-            setInterval(hatiJatuh, 200);
           },
         }).go();
+      }
+
+      const scrollContainer = document.getElementById('contentAkhir');
+      function autoScroll() {
+        scrollContainer.scrollTop += 10;
+      }
+      const scrollInterval = setInterval(autoScroll, 50);
+      const scrollContainerDua = document.getElementById('contentFinal');
+      function autoScrollDua() {
+        scrollContainerDua.scrollTop += 10;
       }
 
       let intervalHati;
@@ -756,7 +962,6 @@
         document.body.appendChild(hati);
       }
 
-      // Klik untuk pindah slide (hanya slide 1 -> 2)
       document.addEventListener('click', function () {
         if (teksSekarang !== 3 && fungsiBerfungsi === true) {
           swiper.slideNext();
@@ -767,7 +972,6 @@
         }
       });
 
-      // Overlay awal
       setTimeout(function () {
         const overlay = document.querySelector('.loading-message');
         overlay.style.display = 'none';
@@ -778,22 +982,13 @@
       let sudahKlik = true;
       let fungsiBerfungsi = false;
 
-      // Tombol love overlay
       document.getElementById('loveIn').innerHTML =
         '<style>.lovein svg{animation:none;stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}</style><label class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></label><p id="ket">Sentuh LOVEnya!</p>';
 
       document.getElementById('loveIn').onclick = function () {
         if (sudahKlik) {
-          audio.loop = false; // matikan loop agar bisa ganti lagu
           audio.play();
           document.querySelector('.overlay').style.display = 'none';
-
-          // Event ganti lagu ketika bergema.mp3 selesai
-          audio.addEventListener('ended', function () {
-            audio.src = '../../../../v2/music/penjaga.mp3';
-            audio.play();
-            audio.loop = true; // penjaga.mp3 bisa di-loop kalau mau
-          });
 
           setTimeout(() => {
             pesan();
@@ -835,6 +1030,12 @@
           imageUrl: '' + phstiker5.src,
           timer: 2650,
         });
+
+        katangetik = "<b class='garismerah'>Terakhir nih,</b> kamu semangat terus ngejalanin hari-harinya yaa, aku ga bakal ngelupain kamu.. 💐<br><br>Dan satu hal yang harus kamu tau, aku ga akan pernah mau kehilanganmu >>";
+        katangetik2 = "<i>I Love uuu 💞💝❣️</i>";
+        ktbwh2 = 'Stay with me yaa 😍❤️';
+        ktbwh3 = 'Aku Sayang Kamu 💐🤍💗';
+        pesanwhatsapp = 'ilvyou too 💞🤍💝❣️';
 
         setTimeout(() => {
           stiker1.classList.add('scale1');
